@@ -21,6 +21,13 @@
 */
 
 
+
+/* Use Permanent Marker where needed */
+.marker1 {
+  font-family: 'Permanent Marker', cursive;
+  color: #00bf63;
+}
+
 /*--------------------------------------------------------------------------
 | 1. Base Styles & Global Utilities
 |--------------------------------------------------------------------------*/
@@ -1362,10 +1369,10 @@ button:hover ~ .custom-cursor,
 
 /* Default desktop/larger screen styles for center-text */
 .center-text {
-    width: 40%; /* Default width for larger screens */
+    width: 60%; /* Default width for larger screens */
     margin-left: auto;
     margin-right: auto;
-    display: flex;
+    display: inline-flexbox;
     justify-content: center;
     align-items: center;
     text-align: center;

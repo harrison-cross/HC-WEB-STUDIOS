@@ -1511,3 +1511,46 @@ button:hover ~ .custom-cursor,
 .honeypot-field {
     display: none;
 }
+
+/*--------------------------------------------------------------------------
+| 15. Scroll-to-top Button
+|--------------------------------------------------------------------------*/
+.scroll-to-top-img-btn {
+    display: flex; /* Use flex to easily center content (the image) */
+    justify-content: ;eft;
+    align-items: left;
+    position: fixed;
+    bottom: 2rem; /* Adjust as needed */
+    right: 2rem; /* Adjust as needed */
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    opacity: 0; /* Hidden by default */
+    visibility: hidden; /* Hidden by default */
+    transform: translateY(20px); /* Start slightly off-screen */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-decoration: none; /* Remove underline for the anchor tag */
+}
+
+.scroll-to-top-img-btn.show {
+    opacity: 1; /* Fully visible when 'show' class is added */
+    visibility: visible; /* Visible when 'show' class is added */
+    transform: translateY(0); /* Slide into view */
+}
+
+.scroll-to-top-img-btn:hover {
+    background-color: var(--green-700); /* Slightly darker accent on hover */
+    transform: translateY(-5px); /* Lift slightly on hover */
+    box-shadow: 0 6px 15px rgb(0, 0, 0);
+}
+
+.scroll-up-icon {
+    width: 60px; /* Size of the image inside the button */
+    height: 60px; /* Size of the image inside the button */
+}
+
+@media (max-width: 768px) {
+  .scroll-to-top-img-btn {
+    display: none !important;
+  }
+}

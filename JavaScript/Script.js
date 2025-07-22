@@ -157,3 +157,46 @@ document.addEventListener('DOMContentLoaded', function() {
 // document.getElementById('mobile-menu-button').onclick = function() {
 //   document.getElementById('mobile-menu').classList.toggle('hidden');
 // };
+
+
+
+
+        // JavaScript to slow down scroll speed for the whole document
+        document.addEventListener('wheel', function(event) {
+            // Check if the user is scrolling the main document (not an element with its own scrollbar)
+            // This basic check prevents interference with elements like modals or iframes that might also scroll
+            if (event.target === document.documentElement || event.target === document.body || event.target.scrollHeight === event.target.clientHeight) {
+                event.preventDefault(); // Prevent default browser scroll
+
+                // Calculate half the scroll amount
+                const scrollAmount = event.deltaY * 4; // Change 0.5 to desired fraction (e.g., 0.25 for quarter speed)
+
+                // Scroll the window by the calculated amount
+                window.scrollBy({
+                    top: scrollAmount,
+                    left: 0,
+                    behavior: 'smooth' // 'auto' for instant, 'smooth' for animated (can feel sluggish if too slow)
+                });
+            }
+        }, { passive: false }); // passive: false is important to allow preventDefault()
+
+
+
+// Show the button when user scrolls down
+window.addEventListener('scroll', function () {
+    const scrollBtn = document.getElementById('scrollToTopImgBtn');
+    if (window.scrollY > 300) {
+        scrollBtn.classList.add('show');
+    } else {
+        scrollBtn.classList.remove('show');
+    }
+});
+
+// Scroll to top on click
+document.getElementById('scrollToTopImgBtn').addEventListener('click', function (e) {
+    e.preventDefault(); // Prevent default anchor jump
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});

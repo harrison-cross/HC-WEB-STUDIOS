@@ -131,12 +131,25 @@
         </section>
     </main>
 
+           <a href="#" id="scrollToTopImgBtn" class="scroll-to-top-img-btn" title="Go to top">
+    <img src="Images/Icons/Scroll-Up.png" alt="Scroll to Top" class="scroll-up-icon">
+</a>
+
 
     <!-- Link to custom JavaScript file (adjust path if privacy.html is in a subfolder) -->
-    <script src="/JS/script.js"></script>
+    <script src="JavaScript/Script.js"></script>
     <script>
 
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById("scrollToTopImgBtn");
+        scrollToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
 
+    </script>
 
 
     </script>
